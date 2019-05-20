@@ -1,0 +1,59 @@
+<view class='top' style='width:100%;min-height:100%;     background-image: url("https://wx-aliyun.oss-cn-beijing.aliyuncs.com/image/zzpic16955.jpg");background-size:100% 100%;'>
+  <!--   顶部欢迎      -->
+  <view class='top_he'>
+    <view class='top_text' wx:if="{{5<h1&&h1<=8}}">早上好</view>
+    <view class='top_text' wx:elif="{{8<h1&&h1<=11}}">上午好</view>
+    <view class='top_text' wx:elif="{{11<h1&&h1<=14}}">中午好</view>
+    <view class='top_text' wx:elif="{{14<h1&&h1<=19}}">下午好</view>
+    <view class='top_text' wx:elif="{{19<h1&&h1<=24}}">晚上好</view>
+    <view class='top_text' wx:elif="{{0<h1&&h1<=5}}">好梦</view>
+    <view class='top_user'>
+    <open-data class='top_img' type="userAvatarUrl"></open-data> 
+    </view>
+  </view>
+  <!--  可能会有的文字     -->
+
+  <!--   图形      -->
+  <view class='wrpg-top'>
+    <view class='clike'>  <!--  最外层   --->
+      <view class="element">  <!--    圆   --->
+        <view class="section">   <!--  内容    --->
+          <picker bindchange="bindPickerChange"   
+            value="{{index}}"range="{{array}}">  <!--  选择器    --->
+            <view wx:if="{{clatxt=='1'}}" class='txt_d1'>
+            雷雨
+            </view>
+            <view class='{{clapik==1?"countDown1":"countDown0"}}'>
+              <text>                           <!--倒计时--->
+              {{countDownNum}}:{{countDownMiao}}
+              </text>
+            </view>
+            <view wx:if="{{clatxt=='0'}}" class='txt_d0'>
+            雷雨
+            </view>
+          </picker>
+        </view>
+      </view> 
+    </view>
+  </view>
+
+  <!--       选择器   --->
+  
+  
+
+
+  <!--   按钮     -->
+  
+  <view wx:if="{{btn_x=='1'}}" class='btn'>
+    <button class='btn_b' bindtap='button1' >开始专注</button>
+  </view>
+  <view wx:elif="{{btn_x=='2'}}" class='btn_1'>
+    <button class='btn_c' bindtap='button2'> 暂停</button>
+  </view>
+  <view wx:elif="{{btn_x=='3'}}" class='btn_1'>
+    <button class='btn_c' bindtap='button3'> 继续</button>
+    <button class='btn_c' bindtap='button4'> 放弃</button>
+  </view>
+  
+  
+</view>
